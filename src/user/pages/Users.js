@@ -6,10 +6,10 @@ const Users = () => {
   const USERS = [
     {
       id: 'u1',
-      name: 'Urkeee',
+      name: 'Uros Milic',
       image:
         'https://www.indiewire.com/wp-content/uploads/2019/03/shutterstock_5885988bd.jpg',
-      places: 3
+      places: 2
     }
   ];
 

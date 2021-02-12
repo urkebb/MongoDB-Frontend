@@ -6,27 +6,27 @@ import PlaceList from '../components/PlaceList';
 const DUMMY_PLACES = [
   {
     id: 'p1',
-    title: 'Urke',
-    description: 'avatarrrr',
+    title: 'Avatarr',
+    description: 'avatraaaar',
     imageUrl:
       'https://www.indiewire.com/wp-content/uploads/2019/03/shutterstock_5885988bd.jpg',
-    address: '18116 Nis',
+    address: 'aaaaaa',
     location: {
-      lat: 43.3160594,
-      lng: 21.9578665
+      lat: 20,
+      lng: -20
     },
     creator: 'u1'
   },
   {
     id: 'p2',
-    title: 'Urke',
-    description: 'avatarrrr',
+    title: 'Avatarr',
+    description: 'avatraaaar',
     imageUrl:
       'https://www.indiewire.com/wp-content/uploads/2019/03/shutterstock_5885988bd.jpg',
-    address: '18116 Nis',
+    address: 'aaaaaa',
     location: {
-      lat: 43.3160594,
-      lng: 21.9578665
+      lat: 20,
+      lng: -20
     },
     creator: 'u2'
   }

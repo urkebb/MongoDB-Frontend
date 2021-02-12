@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 
 import Input from '../../shared/components/FormElements/Input';
 import Button from '../../shared/components/FormElements/Button';
+import Card from '../../shared/components/UIElements/Card';
 import {
   VALIDATOR_REQUIRE,
   VALIDATOR_MINLENGTH
@@ -13,27 +14,27 @@ import './PlaceForm.css';
 const DUMMY_PLACES = [
   {
     id: 'p1',
-    title: 'Urke',
-    description: 'avatarrrr',
+    title: 'Avatarr',
+    description: 'avatraaaar',
     imageUrl:
       'https://www.indiewire.com/wp-content/uploads/2019/03/shutterstock_5885988bd.jpg',
-    address: '18116 Nis',
+    address: 'aaaaaa',
     location: {
-      lat: 43.3160594,
-      lng: 21.9578665
+      lat: 20,
+      lng: -20
     },
     creator: 'u1'
   },
   {
-    id: 'p1',
-    title: 'Urke',
-    description: 'avatarrrr',
+    id: 'p2',
+    title: 'Avatarr',
+    description: 'avatraaaar',
     imageUrl:
       'https://www.indiewire.com/wp-content/uploads/2019/03/shutterstock_5885988bd.jpg',
-    address: '18116 Nis',
+    address: 'aaaaaa',
     location: {
-      lat: 43.3160594,
-      lng: 21.9578665
+      lat: 20,
+      lng: -20
     },
     creator: 'u2'
   }
@@ -60,19 +61,21 @@ const UpdatePlace = () => {
   const identifiedPlace = DUMMY_PLACES.find(p => p.id === placeId);
 
   useEffect(() => {
-    setFormData(
-      {
-        title: {
-          value: identifiedPlace.title,
-          isValid: true
+    if (identifiedPlace) {
+      setFormData(
+        {
+          title: {
+            value: identifiedPlace.title,
+            isValid: true
+          },
+          description: {
+            value: identifiedPlace.description,
+            isValid: true
+          }
         },
-        description: {
-          value: identifiedPlace.description,
-          isValid: true
-        }
-      },
-      true
-    );
+        true
+      );
+    }
     setIsLoading(false);
   }, [setFormData, identifiedPlace]);
 
@@ -84,7 +87,9 @@ const UpdatePlace = () => {
   if (!identifiedPlace) {
     return (
       <div className="center">
-        <h2>Could not find place!</h2>
+        <Card>
+          <h2>Ne mogu da pronadjem mesto</h2>
+        </Card>
       </div>
     );
   }
