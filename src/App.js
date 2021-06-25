@@ -7,9 +7,9 @@ import {
 } from 'react-router-dom';
 
 import Users from './user/pages/Users';
-import NewPlace from './places/pages/NewPlace';
-import UserPlaces from './places/pages/UserPlaces';
-import UpdatePlace from './places/pages/UpdatePlace';
+import NewPost from './posts/pages/NewPost';
+import UserPosts from './posts/pages/UserPosts';
+import UpdatePost from './posts/pages/UpdatePost';
 import Auth from './user/pages/Auth';
 import MainNavigation from './shared/components/Navigation/MainNavigation';
 import { AuthContext } from './shared/context/auth-context';
@@ -36,14 +36,14 @@ const App = () => {
         <Route path="/" exact>
           <Users />
         </Route>
-        <Route path="/:userId/places" exact>
-          <UserPlaces />
+        <Route path="/:userId/posts" exact>
+          <UserPosts />
         </Route>
-        <Route path="/places/new" exact>
-          <NewPlace />
+        <Route path="/posts/new" exact>
+          <NewPost />
         </Route>
-        <Route path="/places/:placeId">
-          <UpdatePlace />
+        <Route path="/posts/:postId">
+          <UpdatePost />
         </Route>
         <Redirect to="/" />
       </Switch>
@@ -54,8 +54,8 @@ const App = () => {
         <Route path="/" exact>
           <Users />
         </Route>
-        <Route path="/:userId/places" exact>
-          <UserPlaces />
+        <Route path="/:userId/posts" exact>
+          <UserPosts />
         </Route>
         <Route path="/auth">
           <Auth />

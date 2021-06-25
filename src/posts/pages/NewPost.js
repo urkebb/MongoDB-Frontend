@@ -13,9 +13,9 @@ import {
 import { useForm } from '../../shared/hooks/form-hook';
 import { useHttpClient } from '../../shared/hooks/http-hook';
 import { AuthContext } from '../../shared/context/auth-context';
-import './PlaceForm.css';
+import './PostForm.css';
 
-const NewPlace = () => {
+const NewPost = () => {
   const auth = useContext(AuthContext);
   const { isLoading, error, sendRequest, clearError } = useHttpClient();
   const [formState, inputHandler] = useForm(
@@ -42,7 +42,7 @@ const NewPlace = () => {
 
   const history = useHistory();
 
-  const placeSubmitHandler = async event => {
+  const postSubmitHandler = async event => {
     event.preventDefault();
     try {
       const formData = new FormData();
@@ -51,7 +51,7 @@ const NewPlace = () => {
       formData.append('address', formState.inputs.address.value);
       formData.append('creator', auth.userId);
       formData.append('image', formState.inputs.image.value);
-      await sendRequest('http://localhost:5000/api/places', 'POST', formData);
+      await sendRequest('http://localhost:5000/api/posts', 'POST', formData);
       history.push('/');
     } catch (err) {}
   };
@@ -59,7 +59,7 @@ const NewPlace = () => {
   return (
     <React.Fragment>
       <ErrorModal error={error} onClear={clearError} />
-      <form className="place-form" onSubmit={placeSubmitHandler}>
+      <form className="post-form" onSubmit={postSubmitHandler}>
         {isLoading && <LoadingSpinner asOverlay />}
         <Input
           id="title"
@@ -92,11 +92,11 @@ const NewPlace = () => {
           errorText="Please provide an image."
         />
         <Button type="submit" disabled={!formState.isValid}>
-          DODAJ MESTO
+          DODAJ POST
         </Button>
       </form>
     </React.Fragment>
   );
 };
 
-export default NewPlace;
+export default NewPost;
