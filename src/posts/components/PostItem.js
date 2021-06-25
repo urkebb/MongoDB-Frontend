@@ -71,7 +71,7 @@ const PostItem = props => {
         }
       >
         <p>
-          Da li ste sigurni da zelite da obrisete ovo mesto?
+          Da li ste sigurni da zelite da obrisete ovaj post?
         </p>
       </Modal>
       <li className="post-item">
